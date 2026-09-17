@@ -1,80 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Babylon.js Test Card</title>
-    <!-- Load the official BabylonJS engine framework from the web -->
-    <script src="https://babylonjs.com"></script>
-    <style>
-        html, body {
-            overflow: hidden;
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            background-color: #111111; /* Dark background */
-            color: white;
-            font-family: sans-serif;
-        }
-        #renderCanvas {
-            width: 100%;
-            height: 100%;
-            touch-action: none;
-            display: block;
-        }
-        #loadingMessage {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            pointer-events: none;
-        }
-    </style>
+    <title>My Portfolio</title>
 </head>
 <body>
+    <h1>This is a heading element</h1>
+    <p>This is a paragraph element</p>
 
-    <div id="loadingMessage">Babylon.js Test Card Loading...</div>
-    <canvas id="renderCanvas"></canvas>
-
-    <script>
-        window.addEventListener('DOMContentLoaded', function() {
-            const canvas = document.getElementById("renderCanvas");
-            
-            // 1. Initialize the 3D Engine
-            const engine = new BABYLON.Engine(canvas, true);
-
-            // 2. Create the Scene Room
-            const createScene = function () {
-                const scene = new BABYLON.Scene(engine);
-                scene.clearColor = new BABYLON.Color3(0.15, 0.15, 0.2); // Dark blue-grey world color
-
-                // 3. Add a Camera (allows you to drag and orbit)
-                const camera = new BABYLON.ArcRotateCamera("camera", Math.PI / 2, Math.PI / 2.5, 4, BABYLON.Vector3.Zero(), scene);
-                camera.attachControl(canvas, true);
-
-                // 4. Add Light
-                const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0), scene);
-                light.intensity = 0.8;
-
-                // 5. Create a 3D Sphere (The Test Card item)
-                const sphere = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 2}, scene);
-
-                return scene;
-            };
-
-            const scene = createScene();
-
-            // 6. Continuous Render Loop
-            engine.runRenderLoop(function () {
-                scene.render();
-            });
-
-            // 7. Handle window resize
-            window.addEventListener("resize", function () {
-                engine.resize();
-            });
-
-            // Remove loading text once running
-            document.getElementById("loadingMessage").textContent = "Babylon.js Engine Active - Drag mouse to rotate 3D view";
-        });
-    </script>
+    <!-- Practical Task: Add a link to a webpage of your choice -->
+    <a href="https://google.com" target="_blank">Visit Google</a>
 </body>
 </html>
